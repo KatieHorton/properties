@@ -10,6 +10,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  margin-top: 250px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -43,16 +44,17 @@
   position: relative;
   border-radius: 5px;
   height: 44px;
-
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .dropdown-input {
   padding: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   user-select: none;
-  width: 99%;
+  width: 75%;
   max-height: 50px;
   color: #61dafb;
 }
@@ -60,8 +62,8 @@
 .dropdown-menu {
   position: absolute;
   transform: translateY(4px);
-  width: 99%;
   overflow: auto;
+  width: 100%;
   max-height: 150px;
   margin-top: 190px;
   background-color: #282c34;
@@ -91,15 +93,31 @@
 
 .element-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   overflow: auto;
-  align-items: center;
-  justify-content: center;
-  max-width: 99%;
-  padding: 5px;
-  background-color: lightcyan;
-  border: 1px solid #61dafb;
+  align-items: flex-start;
+  width: 400px;
+  height: 500px;
+  background-color: lightgray;
+  color: darkslategray;
+  border: 2px solid black;
+}
 
+.element-card h4{
+  padding-left: 5px;
+}
+
+ .card-top {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  width: 100%;
+  border-bottom: 2px solid black;
+
+}
+
+.card-top h1 {
+  margin-right: 10px;
 }
 
 .one-element {
