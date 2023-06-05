@@ -48,10 +48,10 @@ const getColor = () => {
 getColor(selectedValue);
 
 
-const Cards = () => {
+const ElementCells = () => {
   return (
   <div className="element-card">
-    <div className="card-top"s>
+    <div className="card-top">
       <h1 style={{ color }} >{selectedValue.symbol} </h1>
       <h4 style={{ color }}>{selectedValue.atomicNumber}</h4>
     </div>
@@ -64,4 +64,4 @@ const Cards = () => {
 };
 
 
-export default Cards;
+export default ElementCells;
