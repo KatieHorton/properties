@@ -1595,7 +1595,7 @@ const Elements = [
         meltingPoint: 973,
         boilingPoint: 1413,
         density: 5,
-        groupBlock: "Alakaline earth metal",
+        groupBlock: "Alkaline earth metal",
         yearDiscovered: "1898"
     },
     {

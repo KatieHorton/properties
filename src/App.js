@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import bears from './bearsdontsurf.jpeg';
-import coffee from './coffee_0.jpg';
 import './App.css';
 import { Elements } from './PubChemElements.js';
 import Dropdown from './Dropdown.js';
-import ElementList from './elementCard.js';
+import ElementList from './elementsList.js';
+
 
 const App = () => {
   const elements = [...Elements];
@@ -12,26 +11,22 @@ const App = () => {
   return (
 
     <header className="App-header">
-
       <body>
-        <h1>
-          ChemicalsReactApp
-        </h1>
+        <div className="title-search-bar">
 
-        <div className="dropdown-container">
-          <Dropdown placeHolder='select...' elements={elements} />
+          <div className='title'>
+            <h1> Element Cards</h1>
+          </div>
+
+          <div className="dropdown-container">
+            <Dropdown placeHolder='Search...' elements={elements} />
+          </div>
 
         </div>
+
 
         <div className='Element-List'>
-         <ElementList />
-        </div>
-
-
-        <div className="logoContainer">
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
+          <ElementList />
         </div>
 
 
@@ -47,7 +42,6 @@ const App = () => {
 
         <div className="imgContainer">
           <img src={bears} className="bears" alt="surfing bear" />
-          <img src={coffee} className="coffee" alt="coffee" />
         </div>
       </body>
     </header >

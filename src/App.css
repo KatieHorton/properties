@@ -1,46 +1,37 @@
 .App {
   text-align: center;
-}
-
-.elementsList ul {
-  list-style-type: none;
-
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  margin-top: 250px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex;
+  flex-direction: row;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(30,30,30);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #61dafb;
+  color: rgb(244, 244, 244);
 }
 
-.App-header .nav {
-  display: flex;
-  width: 100%;
+.title-search-bar {
+  display: flex; 
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  border: 2px solid 108 110 231;
+  padding: 24px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  align-content: space-between;
 }
 
 .dropdown-container {
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(244, 244, 244);
   position: relative;
   border-radius: 5px;
   height: 44px;
@@ -54,20 +45,21 @@
   display: flex;
   align-items: center;
   user-select: none;
-  width: 75%;
+  width: 100%;
   max-height: 50px;
-  color: #61dafb;
+  color: rgb(244, 244, 244  );
 }
 
 .dropdown-menu {
-  position: absolute;
+  position: relative;
   transform: translateY(4px);
   overflow: auto;
   width: 100%;
+  margin-top: 24px;
   max-height: 150px;
   margin-top: 190px;
-  background-color: #282c34;
-  border: 1px solid #ccc;
+  background-color: rgb(40, 44, 52);
+  border: 1px solid rgb(244, 244, 244);
 }
 
 .dropdown menu .dropdown-item {
@@ -76,78 +68,77 @@
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: gray;
+  background-color: rgb(140, 140, 140);
 }
 
 .dropdown-item.selected {
-  background-color:#282c34;
+  background-color:rgb(40, 44, 52);
 }
 
-.logoContainer {
+.Elements-List ul {
   display: flex;
   flex-direction: row;
-  max-height: 400px;
-  max-width: 100%;
-  padding-top: 100px;
-}
-
-.element-card {
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  align-items: flex-start;
-  width: 400px;
-  height: 500px;
-  background-color: lightgray;
-  color: darkslategray;
-  border: 2px solid black;
-}
-
-.element-card h4{
-  padding-left: 5px;
-}
-
- .card-top {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  width: 100%;
-  border-bottom: 2px solid black;
-
-}
-
-.card-top h1 {
-  margin-right: 10px;
-}
-
-.one-element {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  list-style-type: none;
   justify-content: center;
-  padding: 5px;
+}
+
+.Elements-List ul li button {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 352px;
+  margin: 4px;
+  padding: 16px;
+  border: 2px solid rgb(50, 50, 80);
+  background-color: rgb(39, 42, 56);
+  cursor: pointer;
+}
+.Elements-List h1 {
+  font-size: 64px;
+}
+.Elements-List p {
+  font-size: 20px;
+}
+.element-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+.Elements-List ul li:hover {
+  background-color: rgb(50, 55, 81);
+  border: 2px solid rgb(0, 143, 255);
+}
+.item-top {
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 2px solid rgb(50, 50, 80);
+}
+
+.atomic-number  {
+  display: flex;
+  justify-content: flex-start;
+  height: 10%;
+}
+.atomic-number p {
+  font-size: 16px;
+}
+
+.item-top .symbol {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   text-align: center;
-  color: #61dafb;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .imgContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-
 
 }
 
