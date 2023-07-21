@@ -2,6 +2,8 @@
   text-align: center;
   display: flex;
   flex-direction: row;
+  background-color:rgb(30,30,30);
+
 }
 
 .App-header {
@@ -15,20 +17,16 @@
   color: rgb(244, 244, 244);
 }
 
-.title-search-bar {
-  display: flex; 
-  flex-direction: row;
-  align-items: center;
-  padding: 24px;
-}
+
 
 .title {
   display: flex;
   flex-direction: row;
-  width: 45%;
-  align-content: space-between;
+  width: 100%;
+  justify-content: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+  font-size: 42px;
+  background-color:rgb(30,30,30);
 }
 
 /*
@@ -180,11 +178,18 @@ Elements List Items---------------------
 /*
 One Element-------------------------------
 */
+.window {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color:rgb(30,30,30);
+
+}
 .oneElement {
   display: flex;
   flex-direction:  column;
-  margin: 4px;
-  padding: 4px;
+  margin: 20px;
+  padding: 20px;
   border: 2px solid rgb(50, 50, 80);
   background-color: rgb(39, 42, 56);
   width: 600px;
@@ -236,7 +241,9 @@ Name Form---------------------------
   justify-content: center;
   margin: 8px;
   padding: 8px;
-  border-bottom: 2px solid rgb(50, 50, 80);
+  border: 2px solid rgb(50, 50, 80);
+  background-color:rgb(30,30,30);
+
 
 }
 

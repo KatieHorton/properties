@@ -9,7 +9,7 @@ export default function OneElement() {
         const [index, setIndex] = useState(0);
         const [showMore, setShowMore] = useState(false);
 
-        // let hasPrev = index > 0;
+        let hasPrev = index > 0;
         let hasNext = index < elements.length - 1;
       
         function handleNextClick() {
@@ -18,11 +18,11 @@ export default function OneElement() {
             }
         }
 
-        // function handlePrevClick() {
-        //     if(hasPrev) {
-        //         setIndex(index - 1)
-        //     }
-        // }
+        function handlePrevClick() {
+            if(hasPrev) {
+                setIndex(index - 1)
+            }
+        }
       
         function handleMoreClick() {
           setShowMore(!showMore);
@@ -94,6 +94,9 @@ export default function OneElement() {
                 ({index + 1} of {elements.length})
               </p>
               {showMore &&   <div className="more-details"><p>Mass: {oneElement.atomicMass} <br></br>Electron Configuration: {oneElement.electronConfiguration} <br></br> Boiling Point: {oneElement.boilingPoint}<br></br>Melting Point: {oneElement.meltingPoint}<br></br>Electron Affinity: {oneElement.electronAffinity}<br></br>Electronegativity: {oneElement.electronegativity}<br></br></p></div> }
+              <button onClick={handlePrevClick}>
+                Previous Element...
+              </button>
               <button onClick={handleNextClick}>
                 Next Element...
               </button>
