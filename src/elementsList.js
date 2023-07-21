@@ -46,7 +46,7 @@ const listItems = elements.map((element) => {
     alert(`${element.name} selected`) 
    }
 
-  return (<li value={element.name}
+  return (<td value={element.name}
     name={element.name}
     symbol={element.symbol}
     mass={element.atomicMass}
@@ -67,7 +67,7 @@ const listItems = elements.map((element) => {
         <p>{element.atomicMass}</p>
       </div>
     </button>
-  </li >)
+  </td >)
 
 }
 
@@ -196,7 +196,7 @@ export default function ElementsList() {
         <br></br>
         <br></br>
         <tr className="Lanthanide-series">
-          <td><p>*Lanthanide series</p></td><td></td>
+          <td><h4>*Lanthanide series</h4></td><td></td>
           <td>{listItems[56]}</td>
           <td>{listItems[57]}</td>
           <td>{listItems[58]}</td>
@@ -214,7 +214,7 @@ export default function ElementsList() {
           <td>{listItems[70]}</td>
         </tr>
         <tr className="Actinide-series">
-          <td><p>*Actinide series</p></td><td></td>
+          <td><h4>*Actinide series</h4></td><td></td>
           <td>{listItems[88]}</td>
           <td>{listItems[89]}</td>
           <td>{listItems[90]}</td>

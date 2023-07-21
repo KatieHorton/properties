@@ -90,19 +90,19 @@ Elememnts List---------------------------
   overflow:scroll;
   list-style-type: none;
   align-content: center;
-  margin: 4px;
-  padding: 4px;
-  padding-right: 24px;
-  padding-left: 24px;
+  margin: 16px;
+  padding: 24px;
   background-color: rgb(30, 30, 30);
-
 }
-
 
 .Elements-List h1 {
   font-size: 64px;
 }
-
+.Elements-List h4 {
+  font-size: 14px;
+  font-weight: 300;
+  text-align: right;
+}
 .table-title {
   display: flex;
   width: 100%;
@@ -131,11 +131,10 @@ Elements List Items---------------------
   overflow: hidden;
   width: 80px;
   height: 160px;
-  margin: 2px;
 }
 
 
-li:hover {
+.Elements-List button:hover {
   background-color: rgb(50, 55, 81);
   border: 2px solid rgb(0, 143, 255);
 }
