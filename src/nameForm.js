@@ -1,9 +1,75 @@
+import { useState } from 'react';
+
+export default function NameForm() {
+
+  let [userName, setUserName] = useState('');
+  let [email, setEmail] = useState('');
+
+  function handleUserNameChange(e) {
+    setUserName(userName = e.target.value);
+  }
+
+  function handleEmailChange(e) {
+    setEmail(email = e.target.value);
+  }
+
+  function handleReset() {
+    setUserName(userName = '');
+    setEmail(email = '');
+  }
+
+  return (
+    <div className="name-form">
+    <form onSubmit={e => e.preventDefault()}>
+      <input
+        placeholder="Name"
+        value={userName}
+        onChange={handleUserNameChange}
+      />
+      <input
+        placeholder="email"
+        value={email}
+        onChange={handleEmailChange}
+      />
+      <h4>Hi, {userName}! Please select an element. </h4>
+      <button onClick={handleReset}>Reset</button>
+    </form>
+    </div>
+  );
+}
+
+// feedback message form
+// export default function FeedbackForm() {
+//   const [isSent, setIsSent] = useState(false);
+//   const [message, setMessage] = useState('');
+  
+//   if (isSent) {
+//     return <h1>Thank you!</h1>;
+//   } else {    
+//     return (
+//       <form onSubmit={e => {
+//         e.preventDefault();
+//         alert(`Sending: "${message}"`);
+//         setIsSent(true);
+//       }}>
+//         <textarea
+//           placeholder="Feedback"
+//           value={message}
+//           onChange={e => setMessage(e.target.value)}
+//         />
+//         <br />
+//         <button type="submit">Send</button>
+//       </form>
+//     );
+//   }
+// }
+
 
 // We can combine the two by making the React state be the “single source of truth”. Then the React component that renders a 
 // form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by 
 // React in this way is called a “controlled component”.
 
-<form>
+/* <form>
   <label>
     Name:
     <input type="text" name="name" />
@@ -130,4 +196,4 @@ class Reservation extends React.Component {
         </form>
       );
     }
-  }
+  } */

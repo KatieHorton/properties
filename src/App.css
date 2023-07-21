@@ -27,8 +27,13 @@
   flex-direction: row;
   width: 45%;
   align-content: space-between;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
+/*
+Dropdown------------------------------
+*/
 .dropdown-container {
   text-align: left;
   border: 1px solid rgb(244, 244, 244);
@@ -75,71 +80,174 @@
   background-color:rgb(40, 44, 52);
 }
 
-.Elements-List ul {
+/*
+Elememnts List---------------------------
+*/
+.Elements-List  {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  overflow:scroll;
   list-style-type: none;
-  justify-content: center;
+  align-content: center;
+  margin: 4px;
+  padding: 4px;
+  padding-right: 24px;
+  padding-left: 24px;
+  background-color: rgb(30, 30, 30);
+
 }
 
-.Elements-List ul li button {
-  display: flex;
-  flex-direction: column;
-  width: 280px;
-  height: 352px;
-  margin: 4px;
-  padding: 16px;
-  border: 2px solid rgb(50, 50, 80);
-  background-color: rgb(39, 42, 56);
-  cursor: pointer;
-}
+
 .Elements-List h1 {
   font-size: 64px;
 }
+
+.table-title {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
 .Elements-List p {
-  font-size: 20px;
+  font-size: 12px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:rgb(244, 244, 244);
 }
-.element-name {
-  font-size: 24px;
-  font-weight: bold;
+
+/*
+Elements List Items---------------------
+*/
+
+.Elements-List button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border: 2px solid rgb(50, 50, 80);
+  background-color: rgb(39, 42, 56);
+  cursor: pointer;
+  overflow: hidden;
+  width: 80px;
+  height: 160px;
+  margin: 2px;
 }
-.Elements-List ul li:hover {
+
+
+li:hover {
   background-color: rgb(50, 55, 81);
   border: 2px solid rgb(0, 143, 255);
 }
+
 .item-top {
   display: flex;
   flex-direction: column;
   height: 40%;
   width: 100%;
   justify-content: center;
+  padding-bottom: 12px;
   border-bottom: 2px solid rgb(50, 50, 80);
+}
+
+.element-name {
+  font-weight: bold;
 }
 
 .atomic-number  {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   height: 10%;
+  padding-top: 12px;
 }
+
 .atomic-number p {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .item-top .symbol {
   display: flex;
   flex-direction: row;
-  width: 100%;
   justify-content: center;
   align-items: center;
   align-content: center;
   text-align: center;
 }
+.symbol h1 {
+  font-size: 42px;
+}
 
+
+/*
+One Element-------------------------------
+*/
+.oneElement {
+  display: flex;
+  flex-direction:  column;
+  margin: 4px;
+  padding: 4px;
+  border: 2px solid rgb(50, 50, 80);
+  background-color: rgb(39, 42, 56);
+  width: 600px;
+}
+
+.oneElement .oneElement-details p {
+  font-size: 24px;
+}
+
+.oneElement-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-deets {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  border-bottom: 2px solid rgb(50, 50, 80);
+}
+
+.oneElement-symbol {
+  display: flex;
+  font-size: 72px;
+  text-align: left;
+}
+
+.oneElement-atomicNumber {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2px;
+}
+
+.oneElement-buttons {
+  display: flex;
+  flex-direction: column;
+}
+.oneElement p {
+  font-size: 12px;
+}
+
+/*
+Name Form---------------------------
+*/
+.name-form {
+  display: flex;
+  justify-content: center;
+  margin: 8px;
+  padding: 8px;
+  border-bottom: 2px solid rgb(50, 50, 80);
+
+}
+
+
+/*
+Image-------------------------------
+*/
 .imgContainer {
   display: flex;
   flex-direction: column;
-
 }
 
 .imgContainer,

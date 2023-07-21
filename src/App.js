@@ -1,34 +1,23 @@
 import bears from './bearsdontsurf.jpeg';
 import './App.css';
 import { Elements } from './PubChemElements.js';
-import Dropdown from './Dropdown.js';
-import ElementList from './elementsList.js';
-
+import Dropdown from './Dropdown';
+import ElementsList from './elementsList.js';
+import NameForm from './nameForm.js';
 
 const App = () => {
   const elements = [...Elements];
 
   return (
-
     <header className="App-header">
       <body>
-        <div className="title-search-bar">
-
-          <div className='title'>
-            <h1> Element Cards</h1>
-          </div>
-
-          <div className="dropdown-container">
-            <Dropdown placeHolder='Search...' elements={elements} />
-          </div>
-
+      <div>
+          <NameForm />
         </div>
 
-
-        <div className='Element-List'>
-          <ElementList />
+        <div>
+          <ElementsList />
         </div>
-
 
         <a
           className="App-link"
