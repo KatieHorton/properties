@@ -4,6 +4,7 @@ import './App.css';
 import ElementsList from './elementsList.js';
 import NameForm from './nameForm.js';
 import OneElement from './oneElement.js';
+import CalcInputForm from './CalcInputForm.js'
 
 const App = () => {
   let title = 'ChemicalsReact!';
@@ -12,19 +13,24 @@ const App = () => {
       <body>
         <div className="title">
           <h3>{title}</h3>
-        </div>
-      <div>
-          <NameForm />
-        </div>
+        </div> 
 
-        <div>
+
+         {/* <div>
           <ElementsList />
-        </div>
+        </div> *
 
         <div className="window">
           <OneElement />
+        </div> */}
+
+    <div>
+          <CalcInputForm />
         </div>
-        <a
+
+
+        
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
@@ -36,7 +42,8 @@ const App = () => {
 
         <div className="imgContainer">
           <img src={bears} className="bears" alt="surfing bear" />
-        </div>
+        </div> */}
+
       </body>
     </header >
   );

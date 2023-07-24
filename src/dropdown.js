@@ -26,7 +26,7 @@ const Dropdown = ({ placeHolder }) => {
         const elements = [...Elements];
 
         const [showMenu, setShowMenu] = useState(false);
-        const [selectedValue, setSelectedMenu] = useState(null);
+        const [selectedValue, setSelectedMenu] = useState('');
 
         useEffect(() => {
             const handler = () => setShowMenu(false);
@@ -57,8 +57,13 @@ const Dropdown = ({ placeHolder }) => {
             if (!selectedValue) {
                 return false;
             }
-            return selectedValue.value === element.name;
+            return selectedValue.value === element;
         };
+
+
+        // if (isSelected) {
+        //     return <h1>{massInGrams / atomicMass}</h1>;
+        //   } else {
 
         return (
             <div className="dropdown-container">
@@ -72,7 +77,7 @@ const Dropdown = ({ placeHolder }) => {
                                     className={`dropdown-item ${isSelected(element.name) && "selected"} `}
                                 >
 
-                                    {element.name}
+                                    {element.name} {element.atomicMass}
                                 </div>
                             ))}
                         </div>
