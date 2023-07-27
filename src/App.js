@@ -1,48 +1,43 @@
-import bears from './bearsdontsurf.jpeg';
+// import bears from './bearsdontsurf.jpeg';
 import './App.css';
-// import Dropdown from './Dropdown';
-import ElementsList from './elementsList.js';
-import NameForm from './nameForm.js';
-import OneElement from './oneElement.js';
-import CalcInputForm from './CalcInputForm.js'
+import Dropdown from './dropdown.js';
+// import ElementsList from './elementsList.js';
+// import NameForm from './nameForm.js';
+// import OneElement from './oneElement.js';
+// import CalcInputForm from './CalcInputForm.js'
+import { Elements } from './PubChemElements.js';
+
+
+
 
 const App = () => {
+  const items = [...Elements];
+
   let title = 'ChemicalsReact!';
   return (
     <header className="App-header">
       <body>
         <div className="title">
           <h3>{title}</h3>
-        </div> 
-
-
-         {/* <div>
-          <ElementsList />
-        </div> *
-
-        <div className="window">
-          <OneElement />
-        </div> */}
-
-    <div>
-          <CalcInputForm />
         </div>
 
+        <div className="App">
+          <Dropdown
+            isSearchable
+            isMulti
+            placeHolder="Select..."
+            items={items}
+            onChange={(value) => console.log(value)}
+          />
 
-        
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          React Docs
-        </a>
-
-
-        <div className="imgContainer">
-          <img src={bears} className="bears" alt="surfing bear" />
-        </div> */}
+          <Dropdown
+            isSearchable
+            isMulti
+            placeHolder="Select..."
+            items={items}
+            onChange={(value) => console.log(value)}
+          />
+        </div>
 
       </body>
     </header >
