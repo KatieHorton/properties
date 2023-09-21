@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
+import { Elements } from './PubChemElements.js';
 
 const Icon = () => {
     return (
@@ -20,13 +21,9 @@ const CloseIcon = () => {
     );
 };
 
-const Dropdown = ({
-    placeHolder,
-    items,
-    isMulti,
-    isSearchable,
-    onChange
-}) => {
+
+export function Dropdown({placeHolder, elements, isMulti, isSearchable, onChange}) {
+    elements = [...Elements];
     const [showMenu, setShowMenu] = useState(false);
     const [selectedValue, setSelectedValue] = useState(isMulti ? [] : null);
     const [searchValue, setSearchValue] = useState('');
@@ -63,11 +60,11 @@ const Dropdown = ({
         if (isMulti) {
             return (
                 <div className='dropdown-tags'>
-                    {selectedValue.map((item) => (
-                        <div key={item.name} className='dropdown-tag-item'>
-                            {item.name}
-                            <span onClick={(e) => onTagRemove(e, item)} className='dropdown-tag-close'> <CloseIcon /></span>
-                            
+                    {selectedValue.map((element) => (
+                        <div key={element.name} className='dropdown-tag-element'>
+                            {element.name}
+                            <span onClick={(e) => onTagRemove(e, element)} className='dropdown-tag-close'> <CloseIcon /></span>
+
                         </div>
                     ))}
                 </div>
@@ -76,60 +73,59 @@ const Dropdown = ({
         return selectedValue.name;
     };
 
-    const removeItem = (item) => {
-        return selectedValue.filter((i) => i.value !== item.name);
+    const removeelement = (element) => {
+        return selectedValue.filter((i) => i.value !== element.name);
 
     };
 
-    const onTagRemove = (e, item) => {
-        const newValue = removeItem(item);
+    const onTagRemove = (e, element) => {
+        const newValue = removeelement(element);
         setSelectedValue(newValue);
         onChange(i => newValue);
     };
 
-    const onItemClick = (item) => {
+    const onelementClick = (element) => {
         let newValue;
         if (isMulti) {
-            if (selectedValue.findIndex((i) => i.value === item.value) >= 0) {
-                newValue = removeItem(item);
+            if (selectedValue.findIndex((i) => i.value === element.value) >= 0) {
+                newValue = removeelement(element);
             } else {
-                newValue = [...selectedValue, item];
+                newValue = [...selectedValue, element];
             }
         } else {
-            newValue = item;
+            newValue = element;
         }
         setSelectedValue(newValue);
         onChange(newValue);
     };
 
-    const isSelected = (item) => {
+    const isSelected = (element) => {
         if (isMulti) {
-            return selectedValue.filter((i) => i.value === item.name).length > 0;
+            return selectedValue.filter((i) => i.value === element.name).length > 0;
         }
 
         if (!selectedValue) {
             return false;
         }
 
-        return selectedValue.value === item.name;
+        return selectedValue.value === element.name;
     };
 
     const onSearch = (e) => {
         setSearchValue(e.target.value);
     };
 
-    const getItems = () => {
+    const getelements = () => {
         if (!searchValue) {
-            return items;
+            return elements;
         }
 
-        return items.filter(
-            (item) =>
-                item.name.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
+        return elements.filter(
+            (element) => element.name.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
         );
     };
-//  need updater fn... must be callback like (n => n + 1 )
-//  to take the return value of previous updater
+    //  need updater fn... must be callback like (n => n + 1 )
+    //  to take the return value of previous updater
     return (
         <div className='dropdown-container'>
             <div ref={inputRef} onClick={handleInputClick} className='dropdown-input'>
@@ -147,22 +143,19 @@ const Dropdown = ({
                             <input onChange={onSearch} value={searchValue} ref={searchRef} />
                         </div>
                     )}
-                    {getItems().map((item) => (
+                    {getelements().map((element) => (
                         <div
-                            onClick={() => onItemClick(item)}
-                            key={item.name}
-                            className={`dropdown-item ${isSelected(item) && 'selected'}`}
+                            onClick={() => onelementClick(element)}
+                            key={element.name}
+                            className={`dropdown-element ${isSelected(element) && 'selected'}`}
                         >
-                            {item.name}
+                            {element.name}
                         </div>
                     ))}
                 </div>
             )}
-                    <div>
-                        <h1>hello hydrogen</h1>
-            </div>
+
         </div>
 
     );
-};
-export default Dropdown;
+}

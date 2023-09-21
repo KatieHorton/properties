@@ -1,5 +1,7 @@
 import './App.css';
 import { ElementsList } from './elementsList.js';
+import { Dropdown } from './dropdown.js';
+import { elements } from './PubChemElements.js';
 
 const App = () => {
 
@@ -15,23 +17,24 @@ const App = () => {
           <ElementsList />
         </div>
 
-        {/* <div className="App">
+        <div className="dropdown">
           <Dropdown
             isSearchable
             isMulti
             placeHolder="Select..."
-            items={items}
+            elements={elements}
             onChange={(name) => console.log(name)}
-          /> */}
+          />
 
-        {/* <Dropdown
+        <Dropdown
             isSearchable
             isMulti
             placeHolder="Select..."
-            items={items}
+            elements={elements}
             onChange={(name) => console.log(name)}
-          /> */}
-        {/* </div> */}
+          />
+        </div>
+
         {/* <ElementsContext.Provider value={Elements}>
           <ElementsDispatchContext.Provider value={dispatch}>
             <h1>{Element.name}</h1>
