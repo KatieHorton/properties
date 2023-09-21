@@ -67,23 +67,24 @@ const Dropdown = ({
                         <div key={item.name} className='dropdown-tag-item'>
                             {item.name}
                             <span onClick={(e) => onTagRemove(e, item)} className='dropdown-tag-close'> <CloseIcon /></span>
+                            
                         </div>
                     ))}
                 </div>
             );
         }
-        return selectedValue.label;
+        return selectedValue.name;
     };
 
     const removeItem = (item) => {
         return selectedValue.filter((i) => i.value !== item.name);
+
     };
 
     const onTagRemove = (e, item) => {
-        e.stopPropagation();
         const newValue = removeItem(item);
         setSelectedValue(newValue);
-        onChange(newValue);
+        onChange(i => newValue);
     };
 
     const onItemClick = (item) => {
@@ -127,7 +128,8 @@ const Dropdown = ({
                 item.name.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
         );
     };
-
+//  need updater fn... must be callback like (n => n + 1 )
+//  to take the return value of previous updater
     return (
         <div className='dropdown-container'>
             <div ref={inputRef} onClick={handleInputClick} className='dropdown-input'>
@@ -156,7 +158,11 @@ const Dropdown = ({
                     ))}
                 </div>
             )}
+                    <div>
+                        <h1>hello hydrogen</h1>
+            </div>
         </div>
+
     );
 };
 export default Dropdown;

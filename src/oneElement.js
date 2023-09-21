@@ -7,6 +7,32 @@ const elements = [...Elements];
 
 export default function OneElement() {
   const [index, setIndex] = useState(0);
+  // const [element, setElement] = useState({    
+  //   name: 'Hydrogen',
+  //  atomicNumber: 1,
+  //  symbol: "H",
+  //  atomicMass: 1.0080,
+  //  electronConfiguration: "1s1",
+  //  electronegativity: 2.2,
+  //  atomicRadius: 120,
+  //  ionizationEnergy: 13.598,
+  //  electronAffinity: 0.754,
+  //  oxidationStates: "+1, -1",
+  //  standardState: "Gas",
+  //  meltingPoint: 13.81,
+  //  boilingPoint: 20.28,
+  //  density: 0.00008988,
+  //  groupBlock: "Nonmetal",
+  //  yearDiscovered: "1766"
+  // });
+
+// function handleElementChange(e) {
+//   setElement({
+//     ...element,
+//     [e.target.name]: e.target.value
+
+//   })
+// };
   const [showMore, setShowMore] = useState(false);
 
   let hasPrev = index > 0;
@@ -32,25 +58,25 @@ export default function OneElement() {
 
   const getColor = () => {
 
-    if (oneElement.groupBlock === "Nonmetal") {
+    if (element.groupBlock === "Nonmetal") {
       return color = "rgb(14, 255, 168)"
-    } else if (oneElement.groupBlock === "Noble gas") {
+    } else if (element.groupBlock === "Noble gas") {
       return color = "rgb(224, 156, 255)"
-    } else if (oneElement.groupBlock === "Alkali metal") {
+    } else if (element.groupBlock === "Alkali metal") {
       return color = "rgb(137, 242, 255)"
-    } else if (oneElement.groupBlock === "Alkaline earth metal") {
+    } else if (element.groupBlock === "Alkaline earth metal") {
       return color = "rgb(116, 175, 255)"
-    } else if (oneElement.groupBlock === "Metalloid") {
+    } else if (element.groupBlock === "Metalloid") {
       return color = "rgb(199, 233, 255)"
-    } else if (oneElement.groupBlock === "Halogen") {
+    } else if (element.groupBlock === "Halogen") {
       return color = "rgb(255, 187, 224)"
-    } else if (oneElement.groupBlock === "Post-transition metal") {
+    } else if (element.groupBlock === "Post-transition metal") {
       return color = "rgb(250, 103, 103)";
-    } else if (oneElement.groupBlock === "Transition metal") {
+    } else if (element.groupBlock === "Transition metal") {
       return color = "rgb( 255, 227, 196)"
-    } else if (oneElement.groupBlock === "Lanthanide") {
+    } else if (element.groupBlock === "Lanthanide") {
       return color = "rgb(228, 255, 118)"
-    } else if (oneElement.groupBlock === "Actinide") {
+    } else if (element.groupBlock === "Actinide") {
       return color = "rgb(139, 88, 143)"
     } else {
       return color = "rgb(255, 255, 255)"
@@ -58,42 +84,42 @@ export default function OneElement() {
 
   }
 
-  let oneElement = elements[index];
+const element = elements[index];
 
   return (
-    <div className="oneElement">
+    <div className="element">
 
-      <div className="oneElement-atomicNumber"
-        color={getColor(oneElement)}>
+      <div className="element-atomicNumber"
+        color={getColor(element)}>
         <p>
-          {oneElement.atomicNumber}
+          {element.atomicNumber}
         </p>
       </div>
       <div className="main-deets">
-        <div className="oneElement-symbol">
+        <div className="element-symbol">
           <h1 style={{ color }}>
-            {oneElement.symbol}
+            {element.symbol}
           </h1>
         </div>
 
-        <div className="oneElement-details">
-          <p className="oneElement-name">
-            {oneElement.name}
+        <div className="element-details">
+          <p className="element-name">
+            {element.name}
           </p>
           <p>
-            {oneElement.atomicMass}
+            {element.atomicMass}
           </p>
           <p>
-            {oneElement.standardState}
+            {element.standardState}
           </p>
         </div>
       </div>
 
-      <div className="oneElement-buttons">
+      <div className="element-buttons">
         <p>
           ({index + 1} of {elements.length})
         </p>
-        {showMore && <div className="more-details"><p>Mass: {oneElement.atomicMass} <br></br>Electron Configuration: {oneElement.electronConfiguration} <br></br> Boiling Point: {oneElement.boilingPoint}<br></br>Melting Point: {oneElement.meltingPoint}<br></br>Electron Affinity: {oneElement.electronAffinity}<br></br>Electronegativity: {oneElement.electronegativity}<br></br></p></div>}
+        {showMore && <div className="more-details"><p>Mass: {element.atomicMass} <br></br>Electron Configuration: {element.electronConfiguration} <br></br> Boiling Point: {element.boilingPoint}<br></br>Melting Point: {element.meltingPoint}<br></br>Electron Affinity: {element.electronAffinity}<br></br>Electronegativity: {element.electronegativity}<br></br></p></div>}
         <button onClick={handlePrevClick}>
           Previous Element...
         </button>
@@ -248,4 +274,26 @@ tasks------------------------------
 
 // .Table th {
 //   font-size: 20px;
+
+
+/*
+        atomicNumber: element.atomicNumber,
+        symbol: element.symbol,
+        name: e.target.value,
+        atomicMass: element.atomicMass,
+        electronConfiguration: element.electronConfiguration,
+        electronegativity: element.electronegativity,
+        atomicRadius: element.atomicRadius,
+        ionizationEnergy: element.ionizationEnergy,
+        electronAffinity: element.electronAffinity,
+        oxidationStates: element.oxidationStates,
+        standardState: element.standardState,
+        meltingPoint: meltingPoint,
+        boilingPoint: element.boilingPoint,
+        density: element.density,
+        groupBlock: element.groupBlock,
+        yearDiscovered: element.yearDiscovered
+
+*/
+
 // }

@@ -1,55 +1,73 @@
-// import { Elements } from './PubChemElements.js';
+import { Elements } from './PubChemElements.js';
 import { useState } from 'react';
-// import Dropdown from './Dropdown.js';
+// import Dropdown from './dropdown.js';
 
+const elements = Elements.map(element => element);
 
+export default function CalcInputForm() {
+  return (
+    <>
+      <Input label="element" />
+      <Input label="mass in grams" />
+    </>
+  );
+}
+    
+function Input({ label }) {
+  const [text, setText] = useState('');
+
+  function handleChange(e) {
+    setText(e.target.value);
+  }
+
+  return (
+    <label>
+      {label}
+      {' '}
+      <input
+        value={text}
+        onChange={handleChange}
+      />
+    </label>
+  );
+}
 // export default function CalcInputForm() {
-//     // let elements = [...Elements];
-
-//     let [selectedElement, setSelectedElement] = useState('');
+//     let [element, setElement] = useState('');
 //     let [massInGrams, setMassInGrams] = useState(0);
 
-//     let moles;
-
-//     function calcMol(selectedElement, massInGrams) {
-        
-//         let atomicMass = selectedElement.atomicMass;
-//         moles = massInGrams / atomicMass;
-//         return moles;
-//     }
-
+//     let totalMoles;
 
 //     function handleMassInGramsChange(e) {
 //         setMassInGrams(massInGrams = e.target.value);
 //     }
-//     function handleSubmit(e) {
-//         calcMol(selectedElement, massInGrams)
 
+//     function handleElementChange(e) {
+//         setElement(element = e.target.value);
 //     }
+
+
 //     function handleReset(e) {
-//         setSelectedElement(selectedElement = element.name )  
-//         setMassInGrams(massInGrams = 0);
+//         setElement(element = '');
+//         setMassInGrams(massInGrams = '0');
 //     }
-
+//     function handleSubmit(element, massInGrams) {
+//         let molarMass = element.atomicMass;
+//         totalMoles = massInGrams / molarMass;
+//         return totalMoles;
+//     }
 
 //     return (
 //         <div className="Calc-Input-Form">
-//             <form onSubmit={e => {e.preventDefault()} } handleReset={handleReset}calcMol={calcMol}handleSubmit={handleSubmit}handleMassInGramsChange={handleMassInGramsChange}>
+//             <form onSubmit={e => onSubmit = { handleSubmit }} handleReset={handleReset} handleMassInGramsChange={handleMassInGramsChange}>
 
-//                 <input
-//                     placeholder="0"
-//                     value={massInGrams}
-//                     onChange={handleMassInGramsChange}
-                    
-//                 />
 
-//                 <button onSubmit={handleSubmit}>submit</button>
+//                 <button onSubmit={onHandleSubmit}>submit</button>
 //                 <button onSubmit={handleReset}>reset</button>
 //                 <div className="solution">
-//                     <h4>{moles} mol  {selectedElement.symbol}</h4>
+//                     <h4>{totalMoles} mol  </h4>
 //                 </div>
 //             </form>
 
 //         </div>
 //     )
-// }
+// };

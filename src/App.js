@@ -1,17 +1,7 @@
-// import bears from './bearsdontsurf.jpeg';
 import './App.css';
-import Dropdown from './dropdown.js';
-// import ElementsList from './elementsList.js';
-// import NameForm from './nameForm.js';
-// import OneElement from './oneElement.js';
-// import CalcInputForm from './CalcInputForm.js'
-import { Elements } from './PubChemElements.js';
-
-
-
+import { ElementsList } from './elementsList.js';
 
 const App = () => {
-  const items = [...Elements];
 
   let title = 'ChemicalsReact!';
   return (
@@ -21,24 +11,37 @@ const App = () => {
           <h3>{title}</h3>
         </div>
 
-        <div className="App">
-          <Dropdown
-            isSearchable
-            isMulti
-            placeHolder="Select..."
-            items={items}
-            onChange={(value) => console.log(value)}
-          />
-
-          <Dropdown
-            isSearchable
-            isMulti
-            placeHolder="Select..."
-            items={items}
-            onChange={(value) => console.log(value)}
-          />
+        <div>
+          <ElementsList />
         </div>
 
+        {/* <div className="App">
+          <Dropdown
+            isSearchable
+            isMulti
+            placeHolder="Select..."
+            items={items}
+            onChange={(name) => console.log(name)}
+          /> */}
+
+        {/* <Dropdown
+            isSearchable
+            isMulti
+            placeHolder="Select..."
+            items={items}
+            onChange={(name) => console.log(name)}
+          /> */}
+        {/* </div> */}
+        {/* <ElementsContext.Provider value={Elements}>
+          <ElementsDispatchContext.Provider value={dispatch}>
+            <h1>{Element.name}</h1>
+            <AddElement />
+            <ElementsList />
+          </ElementsDispatchContext.Provider>
+        </ElementsContext.Provider>
+        <div>
+          <ElementsList />
+        </div> */}
       </body>
     </header >
   );

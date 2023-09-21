@@ -139,14 +139,16 @@ Elememnts List---------------------------
   background-color: rgb(30, 30, 30);
 }
 
-.Elements-List h1 {
-  font-size: 64px;
+.Elements-List h3 {
+  font-size: 32px;
+  color: rgb(244, 244, 244);
 }
 
 .Elements-List h4 {
   font-size: 14px;
   font-weight: 300;
   text-align: right;
+  color: rgb(244, 244, 244);
 }
 
 .table-title {
