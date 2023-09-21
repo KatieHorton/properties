@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(39, 42, 56);
+  background-color: rgb(30, 30, 30);
 
 }
 
@@ -165,9 +165,11 @@ Elememnts List---------------------------
   color: rgb(244, 244, 244);
 }
 
+
 /*
 Elements List Items---------------------
 */
+
 
 .Elements-List button {
   display: flex;

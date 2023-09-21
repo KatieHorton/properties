@@ -1,5 +1,7 @@
 My first React App - chemistry project
-
+LEARN REACT 
+CHEMICALS REACT!
+I'm having fun learning react and hope to continue to add functionality to this App in my spare time. I also plan to clean everything up a bit with the goal of focusing on organization.
 
 # Getting Started with Create React App
 

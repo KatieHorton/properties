@@ -31,7 +31,7 @@ const App = () => {
           />
         </div>
 
-        <div>
+        <div className="periodic-table">
           <ElementsList />
         </div>
 

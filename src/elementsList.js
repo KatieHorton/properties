@@ -36,7 +36,7 @@ const listItems = elements.map((element) => {
 
   }
 
-  const handleItemClick = () => alert('click!');
+  const handleItemClick = () => alert(`You have selected ${element.name}`);
 
   return (<button > <td value={element.name}
     name={element.name}
