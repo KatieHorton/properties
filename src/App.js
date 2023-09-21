@@ -13,10 +13,6 @@ const App = () => {
           <h3>{title}</h3>
         </div>
 
-        <div>
-          <ElementsList />
-        </div>
-
         <div className="dropdown">
           <Dropdown
             isSearchable
@@ -26,13 +22,17 @@ const App = () => {
             onChange={(name) => console.log(name)}
           />
 
-        <Dropdown
+          <Dropdown
             isSearchable
             isMulti
             placeHolder="Select..."
             elements={elements}
             onChange={(name) => console.log(name)}
           />
+        </div>
+
+        <div>
+          <ElementsList />
         </div>
 
         {/* <ElementsContext.Provider value={Elements}>
